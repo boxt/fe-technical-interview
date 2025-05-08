@@ -1,40 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 💻 The app
 
-## Getting Started
+A one-page example app that lists 9 items. These items can be filtered by title using the search bar at the top of the page.
 
-First, run the development server:
+> ⚠️ IMPORTANT: Please do not remove any references of `@ts-nocheck`, these are added on purpose!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# 🏃‍♀️ Running the app
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Use Node.js `20.11.0`
+- Run `npm install`
+- Run `npm run dev`
+- For test, run `npm run test`
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+# 📚 Structure
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- `/pages/index.ts` - homepage
+- `/components` - components folder, includes:
+  - `Search` component
+  - `Results` component
+  - `Item` component (use within the `Results` component)
+- `/lib` - contains a mockApiRequest helper function and some seed data (fine to be ignored for the purpose of this exercise!)
+- `middleware.ts` - example middleware file (more about this below). Related files for the middleware exercise:
+  - `/api/feature-flags` - endpoint that call the mockApiRequest function
+  - `/pages/example/index.ts` - example page used in the middleware file
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+# ✅ To do:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Identify and fix:
 
-## Learn More
+1. The app is not returning the list of items - why is that?
 
-To learn more about Next.js, take a look at the following resources:
+2. The search is broken - how can it be fixed? (Scenario: Search for `#2` → Results are correctly filtered → Clear the search → Results are not reset)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+3. What other issues can you spot in the following files?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `src/pages/index.tsx`
+- `src/components/Results.tsx`
+- `src/components/Item.tsx`
 
-## Deploy on Vercel
+4. How can we improve the example unit test?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. What other improvements would you recommend to keep the code clean and scalable?
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+6. Bonus task: Open up the `src/middleware.ts` file and try to find the answer to the following two questions:
+
+- When I visit the `/example` page, I always end up on `/404`. Why is that?
+- When I land on the `/example` page and the `ab-test-image` flag is true, I still don't see the correct image. Why is that?
