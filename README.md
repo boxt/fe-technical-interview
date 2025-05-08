@@ -1,17 +1,19 @@
-# 💻 The app
+## 💻 The app
 
 A one-page example app that lists 9 items. These items can be filtered by title using the search bar at the top of the page.
 
 > ⚠️ IMPORTANT: Please do not remove any references of `@ts-nocheck`, these are added on purpose!
 
-# 🏃‍♀️ Running the app
+https://github.com/user-attachments/assets/ffedd3c1-d796-49dd-8fe2-e602a185e48f
+
+## 🏃‍♀️ Running the app
 
 - Use Node.js `20.11.0`
 - Run `npm install`
 - Run `npm run dev`
 - For test, run `npm run test`
 
-# 📚 Structure
+## 📚 Structure
 
 - `/pages/index.ts` - homepage
 - `/components` - components folder, includes:
@@ -23,7 +25,7 @@ A one-page example app that lists 9 items. These items can be filtered by title 
   - `/api/feature-flags` - endpoint that call the mockApiRequest function
   - `/pages/example/index.ts` - example page used in the middleware file
 
-# ✅ To do:
+## ✅ To do:
 
 Identify and fix:
 
