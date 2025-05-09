@@ -1,12 +1,6 @@
 {
   "name": "Node.js 20 Dev Container",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
-  "features": {
-    "ghcr.io/devcontainers/features/typescript:1": {},
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "20"
-    }
-  },
   "postCreateCommand": "npm install",
   "postStartCommand": "npm run dev",
   "customizations": {
