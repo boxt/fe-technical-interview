@@ -1,6 +1,7 @@
 {
   "name": "Node.js 20 Dev Container",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "postCreateCommand": ["npm install", "npm run dev"],
   "customizations": {
     "vscode": {
       "settings": {
